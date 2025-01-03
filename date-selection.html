@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select a Date</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> <!-- Include Flatpickr CSS -->
     <style>
         body {
             margin: 0;
@@ -23,11 +24,7 @@
             margin-bottom: 20px; /* Space below heading */
         }
 
-        label {
-            margin-bottom: 10px; /* Space below label */
-        }
-
-        input[type="date"] {
+        input[type="text"] {
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #b76e79; /* Rose gold border */
@@ -37,10 +34,20 @@
 </head>
 <body>
 
-<h1>Lets narrow down on the day shall we?</h1>
+<h1>Let's narrow it down on the day shall we? 🦦</h1>
 
-<label for="date">Choose a date for our outing 🦦:</label>
-<input type="date" id="date" name="date">
+<input type="text" id="date" placeholder="Select the date we can go" /> <!-- Input for Flatpickr -->
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> <!-- Include Flatpickr JS -->
+<script>
+    flatpickr("#date", {
+        dateFormat: "Y-m-d", // Format of the date displayed
+        minDate: "today", // Disable past dates
+        locale: {
+            firstDayOfWeek: 1 // Start week on Monday
+        }
+    });
+</script>
 
 </body>
 </html>
