@@ -2,12 +2,15 @@
 layout: custom
 ---
 
+<link href="https://fonts.googleapis.com/css2?family=Corben:wght@400&family=Nobile:wght@400&display=swap" rel="stylesheet"> <!-- Add Google Fonts link -->
+
 <style>
   body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow: hidden; /* Prevent scrolling */
+    font-family: 'Nobile', sans-serif; /* Set default font for body */
   }
 
   /* Style for the video */
@@ -35,6 +38,7 @@ layout: custom
 
   h1 {
     margin-bottom: 20px; /* Add space below the heading */
+    font-family: 'Corben', cursive; /* Use Corben font for headings */
   }
 
   .btn-container {
