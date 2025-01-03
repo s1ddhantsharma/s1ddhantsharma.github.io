@@ -24,6 +24,7 @@ body {
 }
 
 #no-btn:hover {
+  animation: heartbeat 1s infinite;
   transform: scale(0.8);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
