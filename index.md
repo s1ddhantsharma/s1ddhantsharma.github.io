@@ -55,8 +55,8 @@ layout: custom
 <h1>Would you like to go on a date with me, Kiara?</h1>
 
 <div class="btn-container">
-  <button id="yes-btn" class="btn">Yes</button>
-  <button id="no-btn" class="btn" onclick="window.location.href='video.html'">No</button>
+  <button id="yes-btn" class="btn" onclick="window.location.href='destination.html'">Yes</button> <!-- Link to destination page -->
+  <button id="no-btn" class="btn" onclick="window.location.href='video.html'">No</button> <!-- Link to video page -->
 </div>
 
 <script>
