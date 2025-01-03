@@ -12,7 +12,6 @@ layout: custom
     padding: 0;
     height: 100%;
     overflow: hidden; /* Prevent scrolling */
-    font-family: 'Nobile', sans-serif; /* Set default font for body */
   }
 
   /* Style for the video */
@@ -32,7 +31,7 @@ layout: custom
     justify-content: center;
     align-items: center;
     height: 100vh; /* Full viewport height */
-    color: #b76e79; /* Rose gold text color */
+    color: #b03a2e; /* Rose gold text color */
     text-align: center; /* Center text */
     position: relative; /* Position relative for text overlay */
     z-index: 1; /* Bring content above the video */
@@ -50,7 +49,7 @@ layout: custom
   }
 
   .btn {
-    background-color: #b76e79;
+    background-color: #641e16;
     color: white;
     padding: 15px 30px;
     border: none;
