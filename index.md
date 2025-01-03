@@ -15,6 +15,10 @@ layout: custom
     text-align: center; /* Center text */
   }
 
+  h1 {
+    margin-bottom: 20px; /* Add space below the heading */
+  }
+
   .btn {
     background-color: #b76e79;
     color: white;
@@ -24,7 +28,7 @@ layout: custom
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 20px; /* Add space above buttons */
+    margin-top: 10px; /* Add space above buttons */
   }
 
   #yes-btn:hover {
@@ -47,6 +51,8 @@ layout: custom
 
 <div style="display: flex; justify-content: center; gap: 20px;">
   <button id="yes-btn" class="btn">💖 Yes 💖</button>
+</div>
+<div style="display: flex; justify-content: center; gap: 20px;">
   <button id="no-btn" class="btn">💔 No 💔</button>
 </div>
 
