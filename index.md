@@ -2,7 +2,9 @@
 layout: custom
 ---
 
-<link href="https://fonts.googleapis.com/css2?family=Corben:wght@400&family=Nobile:wght@400&display=swap" rel="stylesheet"> <!-- Add Google Fonts link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap" rel="stylesheet">
 
 <style>
   body, html {
@@ -72,6 +74,12 @@ layout: custom
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+  .windsong-medium {
+  font-family: "WindSong", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 </style>
 
 <video autoplay muted loop id="bgVideo">
