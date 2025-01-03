@@ -56,7 +56,7 @@ layout: custom
 
 <div class="btn-container">
   <button id="yes-btn" class="btn">Yes</button>
-  <button id="no-btn" class="btn" onclick="window.location.href='video.html'">No</button> <https://www.youtube.com/watch?v=QGNcfBhGFdc>
+  <button id="no-btn" class="btn" onclick="window.location.href='video.html'">No</button> https://www.youtube.com/watch?v=QGNcfBhGFdc
 </div>
 
 <script>
