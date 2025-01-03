@@ -1,1 +1,4 @@
 theme: jekyll-theme-minimal
+author:
+  name: ""  # Leave this empty or remove it
+  email: ""  # Leave this empty or remove it
