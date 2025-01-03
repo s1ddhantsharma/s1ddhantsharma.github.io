@@ -50,26 +50,26 @@ layout: custom
 <h1>Would you like to go on a date with me, Kiara?</h1>
 
 <div style="display: flex; justify-content: center; gap: 20px;">
-  <button id="yes-btn" class="btn">💖 Yes 💖</button>
+  <button id="yes-btn" class="btn">Yes</button>
 </div>
 <div style="display: flex; justify-content: center; gap: 20px;">
-  <button id="no-btn" class="btn">💔 No 💔</button>
+  <button id="no-btn" class="btn">No</button>
 </div>
 
 <script>
 document.getElementById('yes-btn').addEventListener('mouseover', function() {
-  this.innerHTML = '💖 Yes 💖';
+  this.innerHTML = '💖 Yes 💖'; // Show emoji on hover
 });
 
 document.getElementById('yes-btn').addEventListener('mouseout', function() {
-  this.innerHTML = '💖 Yes 💖';
+  this.innerHTML = 'Yes'; // Revert back when not hovering
 });
 
 document.getElementById('no-btn').addEventListener('mouseover', function() {
-  this.innerHTML = '💔 No 💔';
+  this.innerHTML = '💔 No 💔'; // Show emoji on hover
 });
 
 document.getElementById('no-btn').addEventListener('mouseout', function() {
-  this.innerHTML = '💔 No 💔';
+  this.innerHTML = 'No'; // Revert back when not hovering
 });
 </script>
