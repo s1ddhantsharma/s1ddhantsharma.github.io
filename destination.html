@@ -5,18 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Where Would You Like Me to Take You?</title>
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            height: 100%; /* Full height */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Style for the video */
+        #bgVideo {
+            position: fixed; /* Fixed position to stay in place */
+            top: 0;
+            left: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            object-fit: cover; /* Cover the entire viewport */
+            z-index: -1; /* Place behind other content */
+        }
+
+        .content {
             display: flex;
             flex-direction: column; /* Stack elements vertically */
             justify-content: center; /* Center vertically */
             align-items: center; /* Center horizontally */
             height: 100vh; /* Full viewport height */
-            background-color: #f9e6e6; /* Off-white with a hint of pink */
-            color: #b76e79; /* Rose gold */
+            color: #b76e79; /* Rose gold text color */
             text-align: center; /* Center text */
+            position: relative; /* Position relative for text overlay */
+            z-index: 1; /* Bring content above the video */
         }
 
         h1 {
@@ -50,23 +66,30 @@
 </head>
 <body>
 
-<h1>Where would you like me to take you?</h1>
+<video autoplay muted loop id="bgVideo">
+    <source src="page2.mp4" type="video/mp4"> <!-- Path to your video file -->
+    Your browser does not support the video tag.
+</video>
 
-<div class="image-container">
-    <div class="restaurant">
-        <img src="https://resizer.otstatic.com/v2/photos/xlarge/3/57991331.webp" alt="Bar Goa" 
-             data-restaurant="Bar Goa" onclick="selectRestaurant(this)"> <!-- Link to date selection page -->
-        <p>Bar Goa</p> <!-- Name of the restaurant -->
-    </div>
-    <div class="restaurant">
-        <img src="https://images.squarespace-cdn.com/content/v1/64cb1211ed78b4775652cf45/1c0e419c-fa57-4a2e-bb39-800d709aa0fa/Daldongnaebbq.jpg" alt="Daldongnae Korean BBQ" 
-             data-restaurant="Daldongnae Korean BBQ" onclick="selectRestaurant(this)"> <!-- Link to date selection page -->
-        <p>Daldongnae Korean BBQ</p> <!-- Name of the restaurant -->
-    </div>
-    <div class="restaurant">
-        <img src="home.png" alt="Home" 
-             data-restaurant="Home" onclick="selectRestaurant(this)"> <!-- Link to date selection page -->
-        <p>Home</p> <!-- Name of the restaurant -->
+<div class="content">
+    <h1>Where would you like me to take you?</h1>
+
+    <div class="image-container">
+        <div class="restaurant">
+            <img src="https://resizer.otstatic.com/v2/photos/xlarge/3/57991331.webp" alt="Bar Goa" 
+                 data-restaurant="Bar Goa" onclick="selectRestaurant(this)"> <!-- Link to date selection page -->
+            <p>Bar Goa</p> <!-- Name of the restaurant -->
+        </div>
+        <div class="restaurant">
+            <img src="https://images.squarespace-cdn.com/content/v1/64cb1211ed78b4775652cf45/1c0e419c-fa57-4a2e-bb39-800d709aa0fa/Daldongnaebbq.jpg" alt="Daldongnae Korean BBQ" 
+                 data-restaurant="Daldongnae Korean BBQ" onclick="selectRestaurant(this)"> <!-- Link to date selection page -->
+            <p>Daldongnae Korean BBQ</p> <!-- Name of the restaurant -->
+        </div>
+        <div class="restaurant">
+            <img src="home.png" alt="Home" 
+                 data-restaurant="Home" onclick="selectRestaurant(this)"> <!-- Link to date selection page -->
+            <p>Home</p> <!-- Name of the restaurant -->
+        </div>
     </div>
 </div>
 
@@ -82,5 +105,3 @@ function selectRestaurant(element) {
 
 </body>
 </html>
-
-
