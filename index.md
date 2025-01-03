@@ -19,6 +19,12 @@ layout: custom
     margin-bottom: 20px; /* Add space below the heading */
   }
 
+  .btn-container {
+    display: flex; /* Use flexbox to align buttons in a row */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons */
+  }
+
   .btn {
     background-color: #b76e79;
     color: white;
@@ -28,7 +34,6 @@ layout: custom
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 10px; /* Add space above buttons */
   }
 
   #yes-btn:hover {
@@ -49,10 +54,8 @@ layout: custom
 
 <h1>Would you like to go on a date with me, Kiara?</h1>
 
-<div style="display: flex; justify-content: center; gap: 20px;">
+<div class="btn-container">
   <button id="yes-btn" class="btn">Yes</button>
-</div>
-<div style="display: flex; justify-content: center; gap: 20px;">
   <button id="no-btn" class="btn">No</button>
 </div>
 
