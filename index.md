@@ -5,6 +5,7 @@ layout: custom
 <style>
   body {
     display: flex;
+    flex-direction: column; /* Stack elements vertically */
     justify-content: center;
     align-items: center;
     height: 100vh; /* Full viewport height */
@@ -23,6 +24,7 @@ layout: custom
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: 20px; /* Add space above buttons */
   }
 
   #yes-btn:hover {
