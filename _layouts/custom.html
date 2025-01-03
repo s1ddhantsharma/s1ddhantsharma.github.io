@@ -42,34 +42,3 @@ layout: null
 
   @keyframes heartbeat {
     0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-</style>
-
-<h1>Would you like to go on a date with me, Kiara?</h1>
-
-<div style="display: flex; justify-content: center; gap: 20px;">
-  <button id="yes-btn" class="btn">💖 Yes 💖</button>
-</div>
-<div style="display: flex; justify-content: center; gap: 20px;">
-  <button id="no-btn" class="btn">💔 No 💔</button>
-</div>
-
-<script>
-document.getElementById('yes-btn').addEventListener('mouseover', function() {
-  this.innerHTML = '💖 Yes 💖';
-});
-
-document.getElementById('yes-btn').addEventListener('mouseout', function() {
-  this.innerHTML = '💖 Yes 💖';
-});
-
-document.getElementById('no-btn').addEventListener('mouseover', function() {
-  this.innerHTML = '💔 No 💔';
-});
-
-document.getElementById('no-btn').addEventListener('mouseout', function() {
-  this.innerHTML = '💔 No 💔';
-});
-</script>
