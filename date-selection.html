@@ -65,3 +65,95 @@ flatpickr("#date", {
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a Date</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> <!-- Include Flatpickr CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            height: 100vh; /* Full viewport height */
+            background-color: #f9e6e6; /* Off-white with a hint of pink */
+            color: #b76e79; /* Rose gold */
+            text-align: center; /* Center text */
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Space below heading */
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #b76e79; /* Rose gold border */
+            font-size: 16px;
+        }
+        
+        .restaurant-name {
+          margin-top: 20px;
+          font-weight: bold;
+          font-size: 18px;
+          color: #b76e79;
+        }
+        
+        .selected-info {
+          margin-top: 20px;
+          font-size: 16px;
+          color: #b76e79;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Let's narrow it down on the day shall we princess? 🦦</h1>
+
+<div class="restaurant-name"></div> <!-- Placeholder for selected restaurant name -->
+
+<!-- Create a form that submits to Formspree -->
+<form
+  action="https://formspree.io/f/mzzzkevb"
+  method="POST"
+> <!-- Replace with your Formspree endpoint -->
+    <input type="hidden" name="restaurant" id="restaurant" /> <!-- Hidden input for restaurant name -->
+    <input type="text" id="date" name="date" placeholder="Select a date" /> <!-- Input for Flatpickr -->
+    
+    <button type="submit">Date Fixed</button> <!-- Submit button -->
+</form>
+
+<div class="selected-info"></div> <!-- Placeholder for displaying selected date -->
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> <!-- Include Flatpickr JS -->
+<script>
+// Retrieve selected restaurant from localStorage
+const selectedRestaurant = localStorage.getItem('selectedRestaurant');
+if (selectedRestaurant) {
+    document.querySelector('.restaurant-name').innerText = `You selected ${selectedRestaurant}`;
+    document.getElementById('restaurant').value = selectedRestaurant; // Set hidden input value
+}
+
+// Initialize Flatpickr
+flatpickr("#date", {
+    dateFormat: "Y-m-d", // Format of the date displayed
+    minDate: "today", // Disable past dates
+    onChange(selectedDates) { // Event triggered when a date is selected
+        if (selectedDates.length > 0) {
+            const selectedDate = selectedDates[0].toLocaleDateString(); // Format date as needed
+            document.querySelector('.selected-info').innerText = `Selected Date: ${selectedDate}`;
+        }
+    }
+});
+</script>
+
+</body>
+</html>
+
+
