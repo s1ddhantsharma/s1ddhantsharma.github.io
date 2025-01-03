@@ -43,6 +43,20 @@
           font-size: 16px;
           color: #b76e79;
         }
+
+        button {
+            background-color: #b76e79; /* Button background color */
+            color: white; /* Button text color */
+            padding: 10px 20px; /* Button padding */
+            border-radius: 5px; /* Rounded corners */
+            border: none; /* No border */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size */
+        }
+        
+        button:hover {
+            background-color: #a45c6d; /* Darker shade on hover */
+        }
     </style>
 </head>
 <body>
@@ -52,10 +66,7 @@
 <div class="restaurant-name"></div> <!-- Placeholder for selected restaurant name -->
 
 <!-- Create a form that submits to Formspree -->
-<form
-  action="https://formspree.io/f/mzzzkevb"
-  method="POST"
-> <!-- Replace with your Formspree endpoint -->
+<form action="https://formspree.io/f/mzzzkevb" method="POST"> <!-- Replace with your Formspree endpoint -->
     <input type="hidden" name="restaurant" id="restaurant" /> <!-- Hidden input for restaurant name -->
     <input type="text" id="date" name="date" placeholder="Select a date" /> <!-- Input for Flatpickr -->
     
@@ -88,5 +99,3 @@ flatpickr("#date", {
 
 </body>
 </html>
-
-
