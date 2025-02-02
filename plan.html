@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Plan</title>
+    <link rel="stylesheet" href="./plan_style.css">
+    <script src="./plan_script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=WindSong&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="header-link">♥ Our Story ♥</a>
+            <nav class="header-nav">
+                <a href="yes.html">Back to Yes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="header_text">Let's Plan Our Date!</h1>
+        
+        <div class="planning-container">
+            <div class="input-group">
+                <label for="place">Where should we go?</label>
+                <input type="text" id="place" placeholder="Enter a special place...">
+                <div class="suggestions"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="date">Choose the perfect date:</label>
+                <input type="date" id="date" min="2025-02-03">
+            </div>
+
+            <div class="input-group">
+                <label for="time">What time should I pick you up?</label>
+                <input type="time" id="time">
+            </div>
+
+            <div class="interactive-element">
+                <div class="heart-pulse">❤</div>
+                <button class="btn" id="confirmBtn">Confirm Our Plans</button>
+            </div>
+
+            <div class="confirmation-message hidden">
+                <p>🎉 Yay! Can't wait for our date at <span id="confirmedPlace"></span> on <span id="confirmedDate"></span> at <span id="confirmedTime"></span>! 🎉</p>
+                <div class="countdown"></div>
+            </div>
+        </div>
+    </main>
+
+    <div class="background-animation"></div>
+</body>
+</html>
