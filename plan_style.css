@@ -37,6 +37,11 @@
   right: 0;
   width: 100%;
 }
+.header_text {
+    text-align: center;
+    color: white;
+}
+
 body {
     display: flex;
     flex-direction: column;
