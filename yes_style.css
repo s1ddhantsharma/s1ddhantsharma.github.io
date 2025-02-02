@@ -1,23 +1,83 @@
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
     background-color: rgb(189, 225, 122);
 }
 
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 .header_text {
-    font-family: 'Nunito';
     font-size: 50px;
     font-weight: bold;
     color: white;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0px;
+    margin: 20px 0;
 }
 
 .gif_container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.gif_container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header Styles */
+.site-header {
+    background-color: #f9e6e6;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-link {
+    font-family: 'WindSong', cursive;
+    font-size: 24px;
+    color: #b76e79;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-nav a {
+    margin-left: 15px;
+    color: #b76e79;
+    text-decoration: none;
+    font-family: 'WindSong', cursive;
+}
+
+.header-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    .header_text {
+        font-size: 36px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .header_text {
+        font-size: 28px;
+    }
 }
