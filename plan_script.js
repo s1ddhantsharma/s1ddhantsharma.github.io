@@ -56,15 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
         confirmBtn.disabled = true;
         confirmBtn.textContent = 'Submitting...';
 
-        const formData = new FormData(dateForm);
+        const formData = new FormData();
+        formData.append('place', placeInput.value);
+        formData.append('date', dateInput.value);
+        formData.append('time', timeInput.value);
 
         console.log('Sending form data:', Object.fromEntries(formData)); // Debug log
 
         fetch('https://formspree.io/f/manqjdnj', {
             method: 'POST',
-            body: formData,
+            body: JSON.stringify(Object.fromEntries(formData)),
             headers: {
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             }
         })
         .then(response => {
@@ -72,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 return response.json();
             } else {
-                throw new Error('Form submission failed');
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
         })
         .then(data => {
@@ -82,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('There was an error submitting the form. Please try again.');
+            alert(`There was an error submitting the form. Please try again. Error: ${error.message}`);
         })
         .finally(() => {
             // Re-enable the button
@@ -90,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             confirmBtn.textContent = 'Confirm Our Plans';
         });
     });
+
 
     function updateConfirmationMessage() {
         document.getElementById('confirmedPlace').textContent = placeInput.value;
