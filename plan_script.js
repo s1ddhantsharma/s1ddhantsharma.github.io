@@ -56,19 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
         confirmBtn.disabled = true;
         confirmBtn.textContent = 'Submitting...';
 
-        const formData = new FormData();
-        formData.append('place', placeInput.value);
-        formData.append('date', dateInput.value);
-        formData.append('time', timeInput.value);
+        const formData = new FormData(dateForm);
 
-        console.log('Sending form data:', Object.fromEntries(formData)); // Debug log
-
-        fetch('https://formspree.io/f/manqjdnj', {
+        fetch(dateForm.action, {
             method: 'POST',
-            body: JSON.stringify(Object.fromEntries(formData)),
+            body: formData,
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Accept': 'application/json'
             }
         })
         .then(response => {
@@ -94,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
             confirmBtn.textContent = 'Confirm Our Plans';
         });
     });
-
 
     function updateConfirmationMessage() {
         document.getElementById('confirmedPlace').textContent = placeInput.value;
