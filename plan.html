@@ -22,34 +22,33 @@
     <main class="container">
         <h1 class="header_text">Let's Plan Our Date!</h1>
         
-        <form id="dateForm" class="planning-container">
+        <form action="https://formspree.io/f/manqjdnj" method="POST" id="dateForm" class="planning-container">
             <div class="input-group">
                 <label for="place">Where should we go?</label>
-                <input type="text" id="place" placeholder="Enter a special place...">
+                <input type="text" id="place" name="place" placeholder="Enter a special place...">
                 <div class="suggestions"></div>
             </div>
 
             <div class="input-group">
                 <label for="date">Choose the perfect date:</label>
-                <input type="date" id="date" min="2025-02-03">
+                <input type="date" id="date" name="date" min="2025-02-03">
             </div>
 
             <div class="input-group">
                 <label for="time">What time should I pick you up?</label>
-                <input type="time" id="time">
+                <input type="time" id="time" name="time">
             </div>
 
             <div class="interactive-element">
                 <div class="heart-pulse">❤</div>
-                <button class="btn" id="confirmBtn">Confirm Our Plans</button>
+                <button type="submit" class="btn" id="confirmBtn">Confirm Our Plans</button>
             </div>
-            </form>
+        </form>
 
-            <div class="confirmation-message hidden">
-                <p>Yayyyy! I Can't wait to take you to <span id="confirmedPlace"></span> on <span id="confirmedDate"></span> at <span id="confirmedTime"></span>! </p>
-                <div class="countdown"></div>
-            </div>
-        
+        <div class="confirmation-message hidden">
+            <p>Yayyyy! I Can't wait to take you to <span id="confirmedPlace"></span> on <span id="confirmedDate"></span> at <span id="confirmedTime"></span>! </p>
+            <div class="countdown"></div>
+        </div>
     </main>
 
     <div class="background-animation"></div>
