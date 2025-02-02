@@ -50,10 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Disable the button to prevent multiple submissions
-        confirmBtn.disabled = true;
-        confirmBtn.textContent = 'Submitting...';
-
         const formData = new FormData();
         formData.append('Place', placeInput.value);
         formData.append('Date', dateInput.value);
@@ -82,8 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('There was an error submitting the form. Please try again.');
         })
         .finally(() => {
-            // Re-enable the button
-            confirmBtn.disabled = false;
             confirmBtn.textContent = 'Confirm Our Plans';
         });
     });
