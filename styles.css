@@ -93,3 +93,37 @@ body {
         font-size: 14px;
     }
 }
+.site-header {
+    background-color: #f9e6e6; /* Matches your existing color scheme */
+    padding: 15px 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-link {
+    font-family: 'WindSong', cursive;
+    font-size: 24px;
+    color: #b76e79;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-nav a {
+    margin-left: 15px;
+    color: #b76e79;
+    text-decoration: none;
+    font-family: 'WindSong', cursive;
+}
+
+.header-nav a:hover {
+    text-decoration: underline;
+}
+
