@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const dateForm = document.getElementById('dateForm');
     const placeInput = document.getElementById('place');
     const dateInput = document.getElementById('date');
     const timeInput = document.getElementById('time');
@@ -41,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Confirmation button handler
-    confirmBtn.addEventListener('click', (e) => {
+    // Form submission handler
+    dateForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        console.log('Button clicked'); // Debug log
+        console.log('Form submitted'); // Debug log
         
         if (!placeInput.value || !dateInput.value || !timeInput.value) {
             alert("Please fill in all the details! 💖");
@@ -55,10 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         confirmBtn.disabled = true;
         confirmBtn.textContent = 'Submitting...';
 
-        const formData = new FormData();
-        formData.append('Place', placeInput.value);
-        formData.append('Date', dateInput.value);
-        formData.append('Time', timeInput.value);
+        const formData = new FormData(dateForm);
 
         console.log('Sending form data:', Object.fromEntries(formData)); // Debug log
 
