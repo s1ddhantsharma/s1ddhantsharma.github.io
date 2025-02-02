@@ -44,16 +44,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Confirmation button handler
     confirmBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        console.log('Button clicked'); // Debug log
         
         if (!placeInput.value || !dateInput.value || !timeInput.value) {
             alert("Please fill in all the details! 💖");
             return;
         }
 
+        // Disable the button to prevent multiple submissions
+        confirmBtn.disabled = true;
+        confirmBtn.textContent = 'Submitting...';
+
         const formData = new FormData();
         formData.append('Place', placeInput.value);
         formData.append('Date', dateInput.value);
         formData.append('Time', timeInput.value);
+
+        console.log('Sending form data:', Object.fromEntries(formData)); // Debug log
 
         fetch('https://formspree.io/f/manqjdnj', {
             method: 'POST',
@@ -63,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         .then(response => {
+            console.log('Response received:', response); // Debug log
             if (response.ok) {
                 return response.json();
             } else {
@@ -70,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         .then(data => {
+            console.log('Form submitted successfully:', data); // Debug log
             updateConfirmationMessage();
             startCountdown();
         })
@@ -78,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('There was an error submitting the form. Please try again.');
         })
         .finally(() => {
+            // Re-enable the button
+            confirmBtn.disabled = false;
             confirmBtn.textContent = 'Confirm Our Plans';
         });
     });
