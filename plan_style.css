@@ -38,8 +38,13 @@
   width: 100%;
 }
 .header_text {
-    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
     color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
 body {
